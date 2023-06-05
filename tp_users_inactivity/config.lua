@@ -14,7 +14,7 @@ Config.DiscordWebhooking = {
     WebhookUrl = "xxxxxxxxxxxxxxxxxxxxxxx",
 
     Label = "Daisy Town",
-    ImageUrl = "https://i.imgur.com/YUTYbMp.png",
+    ImageUrl = "https://i.imgur.com/xxxxxxxxx.png",
     Footer = "© Daisy Town Support Team",
 
     Description = "The following player was inactive for too long, we deleted all data from: ",
