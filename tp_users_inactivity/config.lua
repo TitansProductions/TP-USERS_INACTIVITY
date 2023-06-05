@@ -11,7 +11,7 @@ Config.DevMode = false -- Set this to true only if you are restarting the script
 ---------------------------------------------------------
 
 Config.DiscordWebhooking = {
-    WebhookUrl = "https://discord.com/api/webhooks/1115256841744687224/BDwaVC7PS7Oh6AH9u76dGZOKcWMOjqvF-89kjkFhM5zRDWAnvvPQJBgjR8UL0yJh3GyP",
+    WebhookUrl = "xxxxxxxxxxxxxxxxxxxxxxx",
 
     Label = "Daisy Town",
     ImageUrl = "https://i.imgur.com/YUTYbMp.png",
