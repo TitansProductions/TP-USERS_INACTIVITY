@@ -37,9 +37,6 @@ Config.BlacklistedRoles = {
 -- Blacklisted users won't have any timer updating (in case someone is going to be off for personal reasons).
 Config.BlacklistedUsers = {
     ['steam:1100001339c9bd5'] = true,
-    ['steam:11000011471aca6'] = true,
-    ['steam:1100001327367b6'] = true,
-    ['steam:110000106a667e1'] = true,
 }
 
 Config.RemoveFromDatabaseDataList = {
