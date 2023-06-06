@@ -2,10 +2,8 @@
 
 RegisterNetEvent("vorp:SelectedCharacter")
 AddEventHandler("vorp:SelectedCharacter", function(charid)
-	Wait(10000)
-
+    Wait(10000)
     TriggerServerEvent('tp_users_inactivity:updateLoggedInData')
-
 end)
 
 if Config.DevMode then
