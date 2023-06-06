@@ -46,27 +46,7 @@ Config.RemoveFromDatabaseDataList = {
 
     { table = "DELETE FROM characters WHERE identifier = @identifier" },
 
-    { table = "DELETE FROM characters_leveling WHERE identifier = @identifier" },
-
     { table = "DELETE FROM wagons WHERE identifier = @identifier" },
-
-    { table = "DELETE FROM tp_mailbox_mails_registrations WHERE identifier = @identifier" },
-
-    { table = "DELETE FROM tp_legendhunting WHERE identifier = @identifier" },
-
-    { table = "DELETE FROM tp_companions WHERE identifier = @identifier" },
-
-    { table = "DELETE FROM tp_bank_users WHERE identifier = @identifier" },
-
-    { table = "DELETE FROM ss_mypet WHERE owner = @identifier" },
-
-    { table = "DELETE FROM ss_identitycard WHERE identifier = @identifier" },
-
-    { table = "DELETE FROM ss_crafting WHERE identifier = @identifier" },
-
-    { table = "DELETE FROM scenes WHERE id = @identifier" },
-    
-    { table = "DELETE FROM player_ranch WHERE identifier = @identifier" },
 
     { table = "DELETE FROM outfits WHERE identifier = @identifier" },
 
