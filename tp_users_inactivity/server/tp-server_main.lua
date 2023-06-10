@@ -94,9 +94,9 @@ Citizen.CreateThread(function()
 
                   local Parameters = { ['identifier'] = identifier, ['inactivity_time'] = Config.TimeUpdatingInDatabase }
                   exports.ghmattimysql:execute("UPDATE users SET inactivity_time = inactivity_time + @inactivity_time WHERE identifier = @identifier", Parameters)
-           
-		  inactivity_time = inactivity_time + Config.TimeUpdatingInDatabase
-												
+  
+                  inactivity_time = inactivity_time + Config.TimeUpdatingInDatabase
+
                   local deleteDataTime = Config.RemoveDatabaseDataAfter * 1440
       
                   if tonumber(inactivity_time) >= tonumber(deleteDataTime) then
@@ -134,6 +134,37 @@ Citizen.CreateThread(function()
 
                 local Parameters = { ['identifier'] = identifier, ['inactivity_time'] = Config.TimeUpdatingInDatabase }
                 exports.ghmattimysql:execute("UPDATE users SET inactivity_time = inactivity_time + @inactivity_time WHERE identifier = @identifier", Parameters)
+
+                inactivity_time = inactivity_time + Config.TimeUpdatingInDatabase
+
+                local deleteDataTime = Config.RemoveDatabaseDataAfter * 1440
+      
+                if tonumber(inactivity_time) >= tonumber(deleteDataTime) then
+
+                  local finishedDatabaseTablesRemoving = false
+
+                  local UserParameters = { ['identifier'] = identifier }
+
+                  for _d, database in pairs(Config.RemoveFromDatabaseDataList) do
+                   
+                    exports.ghmattimysql:execute(database.table, UserParameters)
+
+                    if next(Config.RemoveFromDatabaseDataList, _d) == nil then
+                      finishedDatabaseTablesRemoving = true
+                    end
+                    
+                  end
+
+                  while not finishedDatabaseTablesRemoving do
+                    Wait(100)
+                  end
+
+                  exports.ghmattimysql:execute("DELETE FROM users WHERE identifier = @identifier ", UserParameters)
+
+                  print(" [!] The following player was inactive for too long, we deleted all data from: " .. identifier)
+
+                  SendToDiscord(identifier, Config.DiscordWebhooking.Description .. identifier)
+                end
           
               end
 
