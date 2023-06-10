@@ -94,9 +94,10 @@ Citizen.CreateThread(function()
 
                   local Parameters = { ['identifier'] = identifier, ['inactivity_time'] = Config.TimeUpdatingInDatabase }
                   exports.ghmattimysql:execute("UPDATE users SET inactivity_time = inactivity_time + @inactivity_time WHERE identifier = @identifier", Parameters)
-  
+           
+		  inactivity_time = inactivity_time + Config.TimeUpdatingInDatabase
+												
                   local deleteDataTime = Config.RemoveDatabaseDataAfter * 1440
-
       
                   if tonumber(inactivity_time) >= tonumber(deleteDataTime) then
 
